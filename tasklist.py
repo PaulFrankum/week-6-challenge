@@ -168,10 +168,10 @@ def delete_task():
                 y_n ="Yes"
                 # delete task
                 del task_list[to_delete]                
-                # redo ID number <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-                to_end_of_json = len(task_list)+1
-                for i in range(1,to_end_of_json):
-                    task_list("id") = i
+                # redo ID number
+                to_end_of_json = len(task_list)
+                for i in range(to_delete,to_end_of_json):
+                    task_list[i]["id"] = i + 1
                 # Writing JSON data to a file
                 with open('task_list.json', 'w') as file:
                     json.dump(task_list, file, indent=4)
@@ -182,10 +182,10 @@ def delete_task():
                 y_n ="Yes"
                 # delete task
                 del task_list[to_delete]
-                # redo ID number <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-                to_end_of_json = len(task_list)+1
-                for i in range(1,to_end_of_json):
-                    task_list("id") = i               
+                # redo ID number 
+                to_end_of_json = len(task_list)
+                for i in range(to_delete,to_end_of_json):
+                    task_list[i]["id"] = i + 1
                 # Writing JSON data to a file
                 with open('task_list.json', 'w') as file:
                     json.dump(task_list, file, indent=4)
